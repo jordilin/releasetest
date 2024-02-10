@@ -37,7 +37,7 @@ jobs:
           #   os: macos-latest
           # Universal macOS binary is supported as universal-apple-darwin.
           # - target: universal-apple-darwin
-            # os: macos-latest
+          # os: macos-latest
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -46,6 +46,7 @@ jobs:
           # (required) Comma-separated list of binary names (non-extension portion of filename) to build and upload.
           # Note that glob pattern is not supported yet.
           bin: releasetest
+          checksum: sha512
           # (optional) Target triple, default is host triple.
           target: ${{ matrix.target }}
           # (required) GitHub token for uploading assets to GitHub Releases.
